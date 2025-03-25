@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+section
+{
+    padding: 100px 200px;
+}
+
+header
+{
+    z-index: 1000;
+    background-color:#f0f0f0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 10px 200px;
+}
+
+.logo
+{
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:  navy;
+}
+
+.logo:hover,
+.logo.scrolled-into-view,
+.logo.tapped
+{
+    color: navy;
+}
+
+.navigation > a
+{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    padding-left: 30px;
+    text-transform: capitalize;
+    color: navy;
+}
+
+.navigation a:hover,
+.navigation a.scrolled-into-view,
+.navigation a.tapped
+{
+    color: navy;
+}
+
+.main
+{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(./images/sky.jpg) ;
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+    padding: 100px 200px;
+}
+
+.main h2
+{
+    color: white;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.main h2 span
+{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    display: inline-block;
+    margin-top: 10px;
+    color: #0ef;
+    font-size: 3em;
+    font-weight: 600;
+    background-image: linear-gradient(#0ef, #0ef);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -600px 0;
+    transition: background-position 1s, text-shadow 1s;
+    transition-delay: 0.6s, 0s;
+}
+
+.main h2 span:hover,
+.main h2 span.scrolled-into-view,
+.main h2 span.tapped
+{
+    color: transparent;
+    transition:  text-shadow 1s;
+    transition-delay: 0s, 0.5s;
+    background-position: 0 0;
+    text-shadow: 0 0 10px #0ef, 0 0 20px #0ef, 0 0 40px #0ef, 0 0 80px #0ef,
+      0 0 160px #0ef;
+}
+
+.wrapper{
+    display: flex;
+}
+.wrapper .static-txt{
+    padding-top: 12px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 400;
+}
+.wrapper .dynamic-txts{
+    margin-left: 15px;
+    padding-bottom: 40px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+.dynamic-txts li{
+    list-style: none;
+    color:  #0ef;
+    font-size:40px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+    100%{
+        top: -360px;
+    }
+}
+.dynamic-txts li span{
+    position: relative;
+    margin: 5px 0;
+    line-height: 90px;
+}
+.dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid ;
+    animation: typing 3s steps(12) infinite;
+}
+@keyframes typing {
+    40%, 60%{
+        left: calc(100% + 10px);
+    }
+    100%{
+        left: 0;
+    }
+}
+
+.main h3
+{
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.main-btn
+{
+    color: white;
+    background-color:navy;
+    border: 0px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0.9375em 2.1875em;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    transition: 0.7s ease;
+}
+
+.main-btn:hover,
+.main-btn.scrolled-into-view,
+.main-btn.tapped
+{
+    background-color: darkblue;
+    transform: scale(1.1);
+    color: yellow;
+}
+
+.social-icons a
+{
+    display: inline-block;
+    color: white;
+    font-size: 1.7em;
+    padding-right: 30px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover,
+.social-icons a.scrolled-into-view,
+.social-icons a.tapped
+{
+    transform: scale(1.2);
+    color: #0ef;
+}
+
+.title
+{
+    display: flex;
+    justify-content: center;
+    color: navy;
+    font-size: 2.2em;
+    font-weight: 800;
+    text-decoration: none;
+    padding-bottom: 20px;
+}
+
+.content
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card
+{
+    width: 18em;
+    box-shadow: 0 5px 25px rgba(1 1 1 /15%); 
+    background-color: #070738;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 5px;
+    transition: 0.7s ease;
+    text-decoration: none;
+}
+
+.card > p
+{
+    color:darkblue;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background-image: linear-gradient(#0ef, #0ef);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -600px 0;
+    transition: background-position 1s, text-shadow 1s;
+    transition-delay: 0.6s, 0s;
+}
+
+.card > p:hover,
+.card > p.scrolled-into-view,
+.card > p.tapped
+{
+    transition: background-position 1s, text-shadow 1s;
+    transition-delay: 0s, 0.5s;
+    background-position: 0 0;
+    text-shadow: 0 0 10px #0ef, 0 0 20px #0ef, 0 0 40px #0ef, 0 0 80px #0ef,
+      0 0 160px #0ef;
+}
+
+.card:hover,
+.card.scrolled-into-view,
+.card.tapped
+{
+    transform: scale(1.1);
+}
+
+.icon
+{
+    text-align: center;
+    color:#3a6cf4;
+    font-size: 8em;
+}
+
+.info
+{
+    text-align: center;
+}
+
+.info h3
+{
+    color: #3a6cf4;
+    margin: 10px;   
+    margin-bottom: 20px;
+}
+
+.projects
+{
+    background-color: #070738;
+}
+
+.projects h2
+{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #e0ffff;
+    text-shadow: 0px 0px 10px #00c2cb, 0px 0px 20px #fff;
+    margin: 3px;
+}
+
+.projects .content
+{
+    margin-top: 30px;
+}
+
+.project-card
+{
+    background-color: white;
+    border: 1px solid white;
+    min-height: 14em;
+    width:20em ;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px;
+    transition: 0.7s ease;
+}
+
+.project-card:hover,
+.project-card.scrolled-into-view,
+.project-card.tapped
+{
+    transform: scale(1.1);
+}
+
+.project-image img
+{
+    width: 100%;
+}
+
+.project-title
+{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.project-about
+{
+    font-size: 1em;
+    color: black;
+}
+
+.More-details
+{
+    color: rgb(0, 0, 107);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.More-details:hover,
+.More-details.scrolled-into-view,
+.More-details.tapped
+{
+    font-weight: 600;
+    color: #e0ffff;
+    text-shadow: 0px 0px 10px #008990, 0px 0px 20px #fff;
+    margin: 3px;
+}
+
+.project-info
+{
+    padding: 1em;
+}
+
+.card-contact .icon
+{
+    font-size:4.5em;
+}
+
+.card-contact .info
+{
+    color: white;
+}
+
+.card-contact p
+{
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.footer
+{
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    background-color: #070738;
+}
+
+.footer p
+{ 
+    color: white;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.footer > p span
+{
+    color: #3a6cf4;
+}
+
+@keyframes tapEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.tapped {
+    animation: tapEffect 0.5s ease;
+}
+@media (hover: none) and (pointer: coarse) {
+    .logo.scrolled-into-view {
+        color: navy;
+    }
+
+    .navigation a.scrolled-into-view {
+        color: navy;
+    }
+
+    .main h2 span.scrolled-into-view {
+        color: transparent;
+        background-position: 0 0;
+        text-shadow: 0 0 10px #0ef, 0 0 20px #0ef, 0 0 40px #0ef, 0 0 80px #0ef, 0 0 160px #0ef;
+    }
+
+    .main-btn.scrolled-into-view {
+        background-color: darkblue;
+        transform: scale(1.1);
+        color: yellow;
+    }
+
+    .card.scrolled-into-view {
+        transform: scale(1.1);
+    }
+
+    .card p.scrolled-into-view {
+        background-position: 0 0;
+        text-shadow: 0 0 10px #0ef, 0 0 20px #0ef, 0 0 40px #0ef, 0 0 80px #0ef, 0 0 160px #0ef;
+    }
+
+    .project-card.scrolled-into-view {
+        transform: scale(1.1);
+    }
+
+    .More-details.scrolled-into-view {
+        font-weight: 600;
+        color: #e0ffff;
+        text-shadow: 0px 0px 10px #008990, 0px 0px 20px #fff;
+        margin: 3px;
+    }
+
+    .social-icons a.scrolled-into-view {
+        transform: scale(1.2);
+        color: #0ef;
+    }
+}
+
+@media(max-width:1023px)
+{
+    header
+    {
+        padding: 12px 20px;
+    }   
+    .navigation a
+    {
+        padding-left: 10px;
+    }
+    .title
+    {
+        font-size: 1.8em;
+    }
+    section
+    {
+        padding: 80px 20px;
+    }
+    
+    .main h2
+    {
+        padding-right: 90px;
+        font-size: 1em;
+    }
+    .main h3
+    {
+        font-size: 1.6em;
+    }
+    .content
+    {
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 641px) {
+    header {
+        padding: 10px 20px;
+    }
+    .navigation a {
+        padding-left: 10px;
+        font-size: 0.9em;
+    }
+    .main {
+        padding: 50px 20px;
+        text-align: left;
+    }
+    .main h2 {
+        font-size: 1.2em;
+    }
+    .main h2 span {
+        font-size: 1.5em;
+    }
+    .wrapper .static-txt {
+        font-size: 1.2em;
+    }
+    .wrapper .dynamic-txts {
+        font-size: 1.2em;
+    }
+    .main-btn {
+        font-size: 1em;
+        padding: 0.5em 1.5em;
+    }
+    .social-icons a {
+        font-size: 1.5em;
+        padding-right: 15px;
+    }
+    .title {
+        font-size: 1.8em;
+    }
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .project-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .footer {
+        padding: 1em;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer p {
+        font-size: 1em;
+    }
+    .footer .social-icons a {
+        font-size: 1.2em;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 300px) {
+    body {
+        font-size: 10px;
+    }
+    .main h2 {
+        font-size: 1em;
+    }
+    .main h2 span {
+        font-size: 1.2em;
+    }
+    .wrapper .static-txt {
+        font-size: 1em;
+    }
+    .wrapper .dynamic-txts {
+        font-size: 1em;
+    }
+    .main-btn {
+        font-size: 0.9em;
+        padding: 0.4em 1.2em;
+    }
+    .social-icons a {
+        font-size: 1.2em;
+        padding-right: 10px;
+    }
+    .title {
+        font-size: 1.5em;
+    }
+    .card {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .project-card {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .footer {
+        padding: 0.5em;
+    }
+    .footer p {
+        font-size: 0.9em;
+    }
+    .footer .social-icons a {
+        font-size: 1em;
+        padding: 0 5px;
+    }
+}
